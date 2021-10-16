@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "SALE AEfood",
-    'summary': """For sale AEfood""",
-    'website': "https://acefoods.vn",
+    'name': "Purchase TgDĐ",
+    'summary': """For purchase TGDĐ""",
+    'website': "https://thegioididong.com",
     'category': 'Uncategorized',
     'version': '0.1',
     'depends': [
-        'sale',
+        'purchase',
     ],
     'data': [
+        'views/purchase_tgdd_view.xml'
 
     ],
     # 'qweb': ['static/src/xml/*.xml'],
