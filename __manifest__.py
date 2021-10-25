@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Purchase TgDĐ",
+    'name': "Purchase TGDĐ",
     'summary': """For purchase TGDĐ""",
     'website': "https://thegioididong.com",
     'category': 'Uncategorized',
     'version': '0.1',
     'depends': [
-        'purchase',
+        'purchase', 'product'
     ],
     'data': [
         'views/purchase_tgdd_view.xml'

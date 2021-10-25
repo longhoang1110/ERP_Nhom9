@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-          <record id="purchase_tgdd_tree_view" model="ir.ui.view">
-            <field name="name">purchase.tgdd.tree.view</field>
-            <field name="model">purchase.order.view.tree</field>
-            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+          <record id="purchase_tgdd_form_view" model="ir.ui.view">
+            <field name="name">purchase.tgdd.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+          </record>
+         <record model="ir.actions.act_window" id="tgdd_purchase_action_window">
+              <field name="name">TGDD's Purchase Window</field>
+              <field name="res_model">purchase.order</field>
 
-        </record>
+
+              <field name="view_mode">kanban,tree,form,activity</field>
+            </record>
+            <menuitem
+                  name="TGDD's Purchase"
+                  id="tgdd_purchase_menu_root"
+                  sequence="10"
+                  action="tgdd_purchase_action_window"
+                  groups="base.group_user" />
+
   </data>
 </odoo>

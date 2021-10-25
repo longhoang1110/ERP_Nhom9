@@ -3,7 +3,7 @@ from odoo.exceptions import UserError, ValidationError
 
 class tgdd(models.Model):
     _name = "purchase.tgdd"
-    _inherit = "purchase.order"  #
+    _inherit = 'purchase.order'  #
     _description = "extend Purchase model"
 
     # add new field
