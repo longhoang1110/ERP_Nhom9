@@ -16,6 +16,7 @@
             <menuitem
                   name="TGDD's Purchase"
                   id="tgdd_purchase_menu_root"
+                  web_icon="purchase_tgdd,static/description/icon.png"
                   sequence="10"
                   action="tgdd_purchase_action_window"
                   groups="base.group_user" />
