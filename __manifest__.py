@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
-{
-    'name': "Purchase TGDĐ",
-    'summary': """For purchase TGDĐ""",
-    'website': "https://thegioididong.com",
-    'category': 'Uncategorized',
-    'version': '0.1',
-    'depends': [
-        'purchase', 'product'
-    ],
-    'data': [
-        'views/purchase_tgdd_view.xml'
 
-    ],
-    # 'qweb': ['static/src/xml/*.xml'],
+{
+    'name': "Package Condition on Purchase Order",
+    'summary': """Package Condition on Purchase Order""",
+    'description': "This module adds package condition  on purchase order",
+    'author': "Thien Nguyuen Quoc",
+    'company': "Da Nang University of Economic",
+    'website': "facebook.com/mitmap.az",
+    'category': 'Purchase',
+    'version': '14.0.1.0.1',
+    'depends': ['purchase', 'stock', 'purchase_stock'],
+    'data': ['views/purchase_tgdd_order.xml'],
+    'license': 'AGPL-3',
     'installable': True,
-    'application': True,
+    'auto_install': False,
 }
