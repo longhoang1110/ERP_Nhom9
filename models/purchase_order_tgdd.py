@@ -12,11 +12,11 @@ class PurchaseOrder(models.Model):
             ('processing', 'Đang xử lý đơn hàng')
     ], string='Tình trạng hàng', compute='_compute_delivery_status', store=True,
         readonly=True, copy=False, default='nothing')
-    shipping_company = fields.Selection(selection=[
-        ('xnk_da','Công ty TNHH thương mại XNK Đông Á'),
-        ('glotrans','Công ty Glotrans Việt Nam'),
-        ('Toan_Viet','Công ty giao nhận vận tải Toàn Việt')
-    ], string='Đơn vị vận tải')
+    
+    shipping_company_t = fields.Many2one('add.sc', string='Đơn vị vận chuyển', required=True)
+    chinhanh = fields.Many2one('add.branch', string='Chi nhánh', required = True)
+    thanhpho = fields.Many2one('add.city', string='Thành phố', required= True)
+    quocgia = fields.Many2one('res.country', string= 'Quốc gia')
 
 
     @api.depends('state', 'order_line.qty_received')
@@ -35,3 +35,9 @@ class PurchaseOrder(models.Model):
                 rec.delivery_status = 'received'
             elif any(p.state in ('waiting', 'confirmed') for p in pickings):
                 rec.delivery_status = 'processing'
+
+
+class Warehouse(models.Model):
+    _inherit = 'stock.warehouse'
+
+

@@ -10,8 +10,11 @@
     'category': 'Purchase',
     'version': '14.0.1.0.1',
     'depends': ['purchase', 'stock', 'purchase_stock'],
-    'data': ['views/purchase_tgdd_order.xml'],
+    'data': ['views/purchase_tgdd_order.xml',
+             'report/purchase_tgdd_order_templates.xml',
+             'views/create_location.xml'],
     'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
+    "application": True,
 }

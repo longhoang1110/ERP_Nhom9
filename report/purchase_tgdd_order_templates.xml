@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="purchase_tgdd_report_inherit" inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//div[@class='row mt32 mb32']" position="after">
+            <div class="row mt32 mb32" id="inherit_report">
+                <div class="col-auto col-3 mw-100 mb-2">
+                    <strong>Đơn vị vận chuyển:</strong>
+                    <span t-field="doc.shipping_company_t"/>
+                </div>
+                <div class="col-auto col-3 mw-100 mb-2">
+                    <strong>Địa chỉ nhận hàng:</strong>
+                    <div t-field="doc.chinhanh"/>
+                    <div t-field="doc.thanhpho"/>
+                    <div t-field="doc.quocgia"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
