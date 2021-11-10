@@ -16,7 +16,9 @@ class PurchaseOrder(models.Model):
     shipping_company_t = fields.Many2one('add.sc', string='Đơn vị vận chuyển', required=True)
     chinhanh = fields.Many2one('add.branch', string='Chi nhánh', required = True)
     thanhpho = fields.Many2one('add.city', string='Thành phố', required= True)
-    quocgia = fields.Many2one('res.country', string= 'Quốc gia')
+    quocgia = fields.Many2one('res.country', string= 'Quốc gia', required= True)
+    requested_by = fields.Many2one('res.partner', default=lambda self: self.env.user.partner_id.id, required=True)
+    reviewed_by = fields.Many2one('res.partner')
 
 
     @api.depends('state', 'order_line.qty_received')
