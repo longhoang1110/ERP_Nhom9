@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': "Package Condition on Purchase Order",
-    'summary': """Package Condition on Purchase Order""",
-    'description': "This module adds package condition  on purchase order",
+    'name': "Purchase Oder",
+    'summary': """Module hỗ trợ tính năng đặt hàng cho Thế Giới Di Động""",
+    'description': "Bổ sung một số tính năng hỗ trợ cho chức năng đặt hàng, được thiết kế bới nhóm 9 lớp 44k21.1",
     'author': "Thien Nguyuen Quoc",
     'company': "Da Nang University of Economic",
     'website': "facebook.com/mitmap.az",

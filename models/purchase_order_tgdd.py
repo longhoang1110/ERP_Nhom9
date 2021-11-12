@@ -39,7 +39,5 @@ class PurchaseOrder(models.Model):
                 rec.delivery_status = 'processing'
 
 
-class Warehouse(models.Model):
-    _inherit = 'stock.warehouse'
 
 
