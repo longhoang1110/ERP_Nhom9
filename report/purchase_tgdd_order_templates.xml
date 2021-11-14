@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <odoo>
-   <template id="report_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document">
+   <template id="report_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document"><!-- Kế thừa view -->
         <xpath expr="//div[@id='informations']" position="after">
             <div id="informations2" class="row mt32 mb32">
                 <div class="col-3 bm-2">
                     <strong>Đơn vị yêu cầu:</strong>
                     <p t-field="o.requested_by" class="m-0"/>
                 </div>
-
+                    <!-- thêm  3  field vô hóa đơn  -->
                 <div class="col-3 bm-2">
                     <strong>Ngày giao hàng:</strong>
                     <p t-field="o.date_planned" class="m-0"/>
@@ -18,6 +18,18 @@
                 </div>
             </div>
         </xpath>
+       <xpath expr="//t[@t-if='o.dest_address_id']" position="replace">
+            <t t-if="o.dest_address_id">
+            <t t-set="information_block">
+                <strong>Shipping address:</strong>
+                <div t-if="o.chinhanh">
+                    <div t-field="o.chinhanh"
+                        t-options='{"widget": "contact", "fields": ["diachi_id"], "no_marker": True, "phone_icons": True}'/>
+                </div>
+
+            </t>
+        </t>
+       </xpath>
     </template>
 
 </odoo>

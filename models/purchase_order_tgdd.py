@@ -6,6 +6,7 @@ from odoo import models, fields, api, _
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
+
     delivery_status = fields.Selection(selection=[
             ('nothing', 'Chưa có đơn hàng'), ('to_receive', 'Đang đợi hàng'),
             ('partial', 'Đã nhận một phần hàng'), ('received', 'Đã nhận đầy đủ hàng'),
@@ -15,10 +16,10 @@ class PurchaseOrder(models.Model):
     
     shipping_company_t = fields.Many2one('add.sc', string='Đơn vị vận chuyển', required=True)
     chinhanh = fields.Many2one('add.branch', string='Chi nhánh', required = True)
-    thanhpho = fields.Many2one('add.city', string='Thành phố', required= True)
+    thanhpho = fields.Many2one('res.country.state', string='Thành phố', required= True)
     quocgia = fields.Many2one('res.country', string= 'Quốc gia', required= True)
-    requested_by = fields.Many2one('res.partner', default=lambda self: self.env.user.partner_id.id, required=True)
-    reviewed_by = fields.Many2one('res.partner')
+    requested_by = fields.Many2one('hr.employee', default=lambda self: self.env.user.partner_id.id, required=True)
+    reviewed_by = fields.Many2one('hr.employee')
 
 
     @api.depends('state', 'order_line.qty_received')
