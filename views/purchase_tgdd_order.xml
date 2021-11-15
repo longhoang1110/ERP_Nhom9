@@ -4,7 +4,7 @@
     <record id="ship_purchase_order_delivery_form_view" model="ir.ui.view">
         <field name="name">ship.purchase.order.form.inherit</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_form"/> <!-- Kế thừa view -->
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
          <field name="arch" type="xml">
             <field name="partner_id" position="after">
                 <field name="shipping_company_t" string="Đơn vị vận chuyển"  />
@@ -17,14 +17,14 @@
             <xpath expr="//field[@name='company_id']" position="after">
                 <field name="requested_by" string="Đơn vị yêu cầu"/>
                 <field name="reviewed_by" string="Đã được xác nhận bởi"/>
-                                    <!-- thêm  3  field vô view purchase order  -->
+
             </xpath>
         </field>
     </record>
      <record id="purchase_order_delivery_tree_view" model="ir.ui.view">
         <field name="name">purchase.order.tree.inherit</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_view_tree"/><!-- Kế thừa view -->
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_status']" position="after">
                 <field name="delivery_status" optional="show" widget=""
@@ -38,7 +38,7 @@
     <record id="rfq_delivery_tree_view" model="ir.ui.view">
         <field name="name">request.delivery.tree.inherit</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/><!-- Kế thừa view -->
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_status']" position="after">
                 <field name="delivery_status" optional="show" widget=""

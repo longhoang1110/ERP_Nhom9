@@ -18,7 +18,7 @@ class PurchaseOrder(models.Model):
     chinhanh = fields.Many2one('add.branch', string='Chi nhánh', required = True)
     thanhpho = fields.Many2one('res.country.state', string='Thành phố', required= True)
     quocgia = fields.Many2one('res.country', string= 'Quốc gia', required= True)
-    requested_by = fields.Many2one('hr.employee', default=lambda self: self.env.user.partner_id.id, required=True)
+    requested_by = fields.Many2one('res.partner', default=lambda self: self.env.user.partner_id.id, required=True)
     reviewed_by = fields.Many2one('hr.employee')
 
 
